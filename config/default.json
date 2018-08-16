@@ -1,0 +1,13 @@
+{
+    "port"  : 8010,
+    "httpPort": 8010,
+    "newRelicEnabled"    : 0,
+
+    "dbPoolSettings"   : {
+        "host"    : "localhost",
+        "user"    : "root",
+        "password": "root",
+        "database": "inventorylocal",
+        "connectionLimit" : 10
+    }
+}

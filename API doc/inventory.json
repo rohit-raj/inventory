@@ -1,0 +1,1356 @@
+{
+	"info": {
+		"_postman_id": "74515edf-dda1-4ccb-b6b0-4ea86248ce7c",
+		"name": "inventory",
+		"description": "APIs for inventory system :\nRakshak Backend API for UI\n\nResponse                            Code\nPARAMETER_MISSING                   100\nUSER_NOT_FOUND                      101\nCREDENTIAL_MISMATCH                 102\nUNAUTHORIZED_ACCESS                 103\nSPECIAL_CHARACTER_FOUND             104\nUSERNAME_ALREADY_EXISTS             105\nDATA_NOT_FOUND              \t\t106\nACTION_FAILED                       121\nACTION_COMPLETE                     200\nINVALID_ACCESS_TOKEN                401\n\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8010/v1/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"rohit\",\n\t\"password\" : \"qwerty\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				},
+				"description": "Registration API :\ntakes username and password in JSON or xurlformencoded\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}\nor \n{\n    \"status\": 105,\n    \"message\": \"This Username Already Exist.\"\n}"
+			},
+			"response": [
+				{
+					"id": "0d2967e4-2002-4a9d-98f8-6d130c526173",
+					"name": "http://localhost:8010/v1/auth/register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\" : \"rohit\",\n\t\"password\" : \"qwerty\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 10:59:23 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"rohit\",\n\t\"password\" : \"qwerty\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login API :\ntakes username and password in JSON or xurlformencoded\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {\n        \"session_id\": \"d20f1e86-a35a-4090-b2a1-c51fe2b2668b-c3bab7bf-2a4f-43ba-8b91-4571c84831bd\",\n        \"user_id\": \"3bec0924-03ec-468b-99c6-3f11f8cb73c8\",\n        \"username\": \"rohitr\"\n    }\n}\nor \n{\n    \"status\": 105,\n    \"message\": \"Credential Mismatch.\"\n}"
+			},
+			"response": [
+				{
+					"id": "fdb62881-8002-446d-b7a0-d64a0130b46d",
+					"name": "http://localhost:8010/v1/auth/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\" : \"rohit\",\n\t\"password\" : \"qwerty\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:00:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c3-76Jr8lnSOmE0lGnSXWzF9dqkvAI\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{\"session_id\":\"b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2\",\"user_id\":\"ddef93fb-2d71-4596-a052-24f0e32fa4b0\",\"username\":\"rohit\"}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/create-item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"tshirt\",\n\t\"brand\" : \"UCB\",\n\t\"category\" : \"polo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/create-item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"create-item"
+					]
+				},
+				"description": "Create Item API :\ntakes name, brand and category in JSON or xurlformencoded\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}"
+			},
+			"response": [
+				{
+					"id": "2dda4e02-d3c1-451b-9b27-7c6e81758620",
+					"name": "http://localhost:8010/v1/inventory/create-item",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "d20f1e86-a35a-4090-b2a1-c51fe2b2668b-c3bab7bf-2a4f-43ba-8b91-4571c84831bd"
+							},
+							{
+								"key": "user_id",
+								"value": "3bec0924-03ec-468b-99c6-3f11f8cb73c8"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"tshirt\",\n\t\"brand\" : \"UCB\",\n\t\"category\" : \"polo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/create-item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"create-item"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:02:02 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-pXFK0pq2/7SB/4iC/IKKF6jY7b8\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":101,\"message\":\"You Are Not Registered With Us. Please SignUp.\"}"
+				},
+				{
+					"id": "815c27ac-024d-4946-b8fe-7211dde02c0f",
+					"name": "http://localhost:8010/v1/inventory/create-item",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"tshirt\",\n\t\"brand\" : \"UCB\",\n\t\"category\" : \"polo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/create-item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"create-item"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:03:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/get-items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/get-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"get-items"
+					]
+				},
+				"description": "Get Item API :\ntakes session_id and user_id in header\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": [\n        {\n            \"uuid\": \"0f78b99c-080f-42fc-9bb4-9d69432124be\",\n            \"name\": \"tshirt\",\n            \"brand\": \"UCB\",\n            \"category\": \"polo\"\n        }\n    ]\n}"
+			},
+			"response": [
+				{
+					"id": "71f474bb-4222-4986-89f4-ec8a9c98d577",
+					"name": "http://localhost:8010/v1/inventory/get-items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "tshirt",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "UCB",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "polo",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/get-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"get-items"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:07:33 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f1-vgB6FRJQCGj9ktoVBnJgOykqdbU\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":[{\"item_id\":\"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\"name\":\"tshirt\",\"brand\":\"UCB\",\"category\":\"polo\"},{\"item_id\":\"0ff8d8bc-22a4-4644-8edb-ebfdd9cc8acd\",\"name\":\"Shirt\",\"brand\":\"Levis\",\"category\":\"Mandarin\"}]}"
+				},
+				{
+					"id": "1ecfb199-4218-4e4c-8bc8-b07dec48a4d6",
+					"name": "http://localhost:8010/v1/inventory/get-items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/get-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"get-items"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1628",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:38:30 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65c-96SK0KpxgSK5j8J9+Z4eHrnOMM0\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":[{\"item_id\":\"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\"name\":\"Tshirt\",\"brand\":\"UCBL\",\"category\":\"polo\",\"variant\":[{\"id\":1,\"uuid\":\"b7236980-366f-497a-8029-23df3257491b\",\"item_id\":\"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\"name\":\"S\",\"selling_price\":2000,\"cost_price\":1500,\"quantity\":10,\"properties\":\"{\\\"size\\\": 130, \\\"cloth\\\": \\\"cotton\\\", \\\"color\\\": \\\"grey\\\"}\",\"status\":\"ACTIVE\",\"updated_at\":\"2018-08-16T11:38:23.000Z\",\"created_at\":\"2018-08-16T11:24:44.000Z\"},{\"id\":2,\"uuid\":\"7406ba15-98b3-4381-b9d5-b0a3d3817e37\",\"item_id\":\"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\"name\":\"L\",\"selling_price\":2000,\"cost_price\":1500,\"quantity\":10,\"properties\":\"{\\\"size\\\": 130, \\\"cloth\\\": \\\"cotton\\\", \\\"color\\\": \\\"red\\\"}\",\"status\":\"ACTIVE\",\"updated_at\":\"2018-08-16T11:38:27.000Z\",\"created_at\":\"2018-08-16T11:29:48.000Z\"},{\"id\":3,\"uuid\":\"1dba64c1-9763-4b68-9741-d387aaef1ef7\",\"item_id\":\"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\"name\":\"L\",\"selling_price\":2000,\"cost_price\":1500,\"quantity\":10,\"properties\":\"{\\\"size\\\": 130, \\\"cloth\\\": \\\"cotton\\\", \\\"color\\\": \\\"red\\\"}\",\"status\":\"ACTIVE\",\"updated_at\":\"2018-08-16T11:35:37.000Z\",\"created_at\":\"2018-08-16T11:35:37.000Z\"}]},{\"item_id\":\"0ff8d8bc-22a4-4644-8edb-ebfdd9cc8acd\",\"name\":\"Shirt\",\"brand\":\"LEvisL\",\"category\":\"Mandarin\",\"variant\":[{\"id\":4,\"uuid\":\"6ebc04fc-3fd2-4468-b093-d73186142ce4\",\"item_id\":\"0ff8d8bc-22a4-4644-8edb-ebfdd9cc8acd\",\"name\":\"L\",\"selling_price\":2000,\"cost_price\":1500,\"quantity\":10,\"properties\":\"{\\\"size\\\": 130, \\\"cloth\\\": \\\"cotton\\\", \\\"color\\\": \\\"red\\\"}\",\"status\":\"ACTIVE\",\"updated_at\":\"2018-08-16T11:35:48.000Z\",\"created_at\":\"2018-08-16T11:35:48.000Z\"}]}]}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/update-item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Tshirt\",\n\t\"brand\": \"UCB\",\n\t\"category\" : \"polo\",\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/update-item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"update-item"
+					]
+				},
+				"description": "Get Item API :\ntakes session_id and user_id in header\nand\nitem_id in body : mandatory along with\nname, brand, category : optionals\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}"
+			},
+			"response": [
+				{
+					"id": "4ddc84d3-c19e-47b2-b799-cffd4b8b2a9a",
+					"name": "http://localhost:8010/v1/inventory/update-item",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Tshirt\",\n\t\"brand\": \"UCB\",\n\t\"category\" : \"polo\",\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/update-item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"update-item"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:10:40 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/create-variant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"L\",\n\t\"selling_price\" : 2000,\n\t\"cost_price\" : 1500,\n\t\"properties\" : {\n\t\t\"size\" : 130,\n\t\t\"color\" : \"red\",\n\t\t\"cloth\" : \"cotton\"\n\t},\n\t\"quantity\" : 10,\n\t\"item_id\" : \"0ff8d8bc-22a4-4644-8edb-ebfdd9cc8acd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/create-variant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"create-variant"
+					]
+				},
+				"description": "Create Variant API :\ntakes session_id and user_id in header\nand\nitem_id in body : mandatory along with\nname, selling_price, cost_price, properties{ size, color, cloth} quantity\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}"
+			},
+			"response": [
+				{
+					"id": "0580938c-2f18-4ceb-bfc9-2a6e6f7d0512",
+					"name": "http://localhost:8010/v1/inventory/create-variant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"L\",\n\t\"selling_price\" : 2000,\n\t\"cost_price\" : 1500,\n\t\"properties\" : {\n\t\t\"size\" : 130,\n\t\t\"color\" : \"red\",\n\t\t\"cloth\" : \"cotton\"\n\t},\n\t\"quantity\" : 10,\n\t\"item_id\" : \"0ff8d8bc-22a4-4644-8edb-ebfdd9cc8acd\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/create-variant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"create-variant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:35:48 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/update-variant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"selling_price\" : 2020,\n\t\"cost_price\" : 1510,\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\n\t\"variant_id\" : \"1dba64c1-9763-4b68-9741-d387aaef1ef7\",\n\t\"properties\" : {\n\t\t\"size\" : 130\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/update-variant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"update-variant"
+					]
+				},
+				"description": "Update Variant API :\ntakes session_id and user_id in header\nand\nitem_id in body, variant_id in body : mandatory along with\nname, selling_price, cost_price, properties{ size, color, cloth} quantity\n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}"
+			},
+			"response": [
+				{
+					"id": "afbf2204-b79c-461d-be27-965e6be5f1db",
+					"name": "http://localhost:8010/v1/inventory/update-variant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"selling_price\" : 2020,\n\t\"cost_price\" : 1510,\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\n\t\"variant_id\" : \"1dba64c1-9763-4b68-9741-d387aaef1ef7\",\n\t\"properties\" : {\n\t\t\"size\" : 130\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/update-variant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"update-variant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:40:52 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/activity/get-logs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "d20f1e86-a35a-4090-b2a1-c51fe2b2668b-c3bab7bf-2a4f-43ba-8b91-4571c84831bd",
+						"disabled": true
+					},
+					{
+						"key": "user_id",
+						"value": "3bec0924-03ec-468b-99c6-3f11f8cb73c8",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Tshirt",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "brand",
+							"value": "UCB2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "polo",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "item_id",
+							"value": "0f78b99c-080f-42fc-9bb4-9d69432124be",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/activity/get-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"activity",
+						"get-logs"
+					]
+				},
+				"description": "Get actvity log api"
+			},
+			"response": [
+				{
+					"id": "e719f7be-51b1-4fcb-9744-8ca5a086509d",
+					"name": "http://localhost:8010/v1/activity/get-logs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "d20f1e86-a35a-4090-b2a1-c51fe2b2668b-c3bab7bf-2a4f-43ba-8b91-4571c84831bd",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "3bec0924-03ec-468b-99c6-3f11f8cb73c8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tshirt",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "UCB2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "polo",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "item_id",
+									"value": "0f78b99c-080f-42fc-9bb4-9d69432124be",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/activity/get-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"activity",
+								"get-logs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "432",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:40:54 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b0-W2hLkJY744UaswPFal8dB5jQfPY\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":[\"rohit edited name, brand, category of item(s) tshirt\",\"rohit added variant of tshirt\",\"rohit added variant of tshirt\",\"rohit deleted variant of tshirt\",\"rohit deleted variant of tshirt\",\"rohit edited category, brand of item(s) tshirt, shirt\",\"rohit added variant of tshirt\",\"rohit added variant of shirt\",\"rohit edited name, quantity, size, selling_price, cost_price of item(s) shirt, tshirt\"]}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8010/v1/inventory/delete-variant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "session_id",
+						"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2"
+					},
+					{
+						"key": "user_id",
+						"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\n\t\"variant_id\" : \"7406ba15-98b3-4381-b9d5-b0a3d3817e37\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8010/v1/inventory/delete-variant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"v1",
+						"inventory",
+						"delete-variant"
+					]
+				},
+				"description": "Delete Variant API :\ntakes session_id and user_id in header\nand\nitem_id in body, variant_id in body : mandatory \n\nResponse :\n{\n    \"status\": 200,\n    \"message\": \"Ok\",\n    \"data\": {}\n}"
+			},
+			"response": [
+				{
+					"id": "3667f34b-9714-4b83-8b72-b5f9c6a76a94",
+					"name": "http://localhost:8010/v1/inventory/delete-variant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "session_id",
+								"value": "b9bb0794-af42-46fa-954d-14de8ef8994e-ddfb6bf9-6eb7-4b51-9db1-3a813443b6f2",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "user_id",
+								"value": "ddef93fb-2d71-4596-a052-24f0e32fa4b0",
+								"type": "text",
+								"disabled": false
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item_id\" : \"efbcb6f2-5ec6-401e-83c6-4a3d79672fc6\",\n\t\"variant_id\" : \"7406ba15-98b3-4381-b9d5-b0a3d3817e37\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/v1/inventory/delete-variant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"v1",
+								"inventory",
+								"delete-variant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Aug 2018 11:31:59 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-lSc1dVxHGdNgy9+pR/k5HYcAk4U\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":200,\"message\":\"Ok\",\"data\":{}}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7be039d4-792d-4442-8fc2-ba56c7eacdff",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ce29cde5-26b6-4a37-925c-fafac66cf460",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

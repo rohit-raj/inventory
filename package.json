@@ -1,0 +1,26 @@
+{
+  "name": "inventory",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "~1.17.1",
+    "config": "^2.0.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "errorhandler": "^1.5.0",
+    "express": "~4.15.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "morgan": "~1.8.1",
+    "mysql": "^2.16.0",
+    "serve-favicon": "~2.4.2",
+    "uuid": "^3.3.2",
+    "xss": "^1.0.3"
+  }
+}
